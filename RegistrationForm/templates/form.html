@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+</head>
+    <body>
+        <form method="POST" action="/register" style="max-width: 600px; margin: 40px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; font-family: Arial, sans-serif; background-color: #f9f9f9;">
+            <h2 style="text-align: center; margin-bottom: 20px;">Member Registration</h2>
+
+            <label for="email" style="display:block; margin-top: 10px;">Email:</label>
+            <input type="email" name="email" required style="width: 100%; padding: 8px;">
+
+            <label for="password" style="display:block; margin-top: 10px;">Password:</label>
+            <input type="password" name="password" required style="width: 100%; padding: 8px;">
+
+            <label for="location" style="display:block; margin-top: 10px;">Location:</label>
+            <input type="text" name="location" style="width: 100%; padding: 8px;">
+
+            <label for="first_learn_date" style="display:block; margin-top: 10px;">First Learn Date:</label>
+            <input type="datetime-local" name="first_learn_date" style="width: 100%; padding: 8px;">
+
+            <label for="fav_language" style="display:block; margin-top: 10px;">Favorite Programming Language:</label>
+            <select name="fav_language" style="width: 100%; padding: 8px;">
+                <option value="1">Python</option>
+                <option value="2">JavaScript</option>
+                <option value="3">Java</option>
+                <option value="4">C++</option>
+                <option value="5">Go</option>
+            </select>
+
+            <label for="about" style="display:block; margin-top: 10px;">About You:</label>
+            <textarea name="about" rows="4" style="width: 100%; padding: 8px;"></textarea>
+
+              <label style="display:block; margin-top: 10px;">Interested in Learning New Topics:</label>
+                <div style="padding-left: 10px; margin-bottom: 10px;">
+                    <label><input type="radio" name="learn_new_interests" value="true"> Yes</label>
+                    <label style="margin-left: 20px;"><input type="radio" name="learn_new_interests" value="false"> No</label>
+                </div>
+                
+            <label style="display:block; margin-top: 10px;">Select Your Topics of Interest:</label>
+            <div style="padding-left: 10px;">
+                <label><input type="checkbox" name="interest_in_topics" value="1"> Web Development</label><br>
+                <label><input type="checkbox" name="interest_in_topics" value="2"> Machine Learning</label><br>
+                <label><input type="checkbox" name="interest_in_topics" value="3"> Cybersecurity</label><br>
+                <label><input type="checkbox" name="interest_in_topics" value="4"> Blockchain</label><br>
+                <label><input type="checkbox" name="interest_in_topics" value="5"> AI</label><br>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">Register</button>
+            </div>
+        </form>
+
+    </body>
+</html>
