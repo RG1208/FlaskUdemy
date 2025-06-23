@@ -2,8 +2,8 @@ from app import app
 from models import db, Topic, Language
 
 # Sample data
-topics = ["Web Development", "Machine Learning", "Cybersecurity", "Blockchain", "AI"]
-languages = ["Python", "JavaScript", "Java", "C++", "Go"]
+topics = ["Web Development", "Machine Learning", "Cybersecurity", "Blockchain", "AI", "Data Science", "Cloud Computing", "Mobile Development", "Game Development", "DevOps"]
+languages = ["Python", "JavaScript", "Java", "C++", "Go", "Ruby", "PHP", "Swift", "Kotlin", "Rust"]
 
 with app.app_context():
 

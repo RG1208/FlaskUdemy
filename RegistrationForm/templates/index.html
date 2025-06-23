@@ -6,28 +6,26 @@
     <title>Registration form</title>
 </head>
     <body>
-        <form method="POST" action="/register" style="max-width: 600px; margin: 40px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; font-family: Arial, sans-serif; background-color: #f9f9f9;">
+        <form method="POST" action="/" style="max-width: 600px; margin: 40px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; font-family: Arial, sans-serif; background-color: #f9f9f9;">
             <h2 style="text-align: center; margin-bottom: 20px;">Member Registration</h2>
 
             <label for="email" style="display:block; margin-top: 10px;">Email:</label>
-            <input type="email" name="email" required style="width: 100%; padding: 8px;">
+            <input type="email" name="email" value={{member.email}} required style="width: 100%; padding: 8px;">
 
             <label for="password" style="display:block; margin-top: 10px;">Password:</label>
             <input type="password" name="password" required style="width: 100%; padding: 8px;">
 
             <label for="location" style="display:block; margin-top: 10px;">Location:</label>
-            <input type="text" name="location" style="width: 100%; padding: 8px;">
+            <input type="text" name="location" value={{member.location}} style="width: 100%; padding: 8px;">
 
             <label for="first_learn_date" style="display:block; margin-top: 10px;">First Learn Date:</label>
-            <input type="datetime-local" name="first_learn_date" style="width: 100%; padding: 8px;">
+            <input type="datetime-local" name="first_learn_date" value={{member.first_learn_date.strftime('%Y-%m-%dT%H:%M')}} required style="width: 100%; padding: 8px;">
 
             <label for="fav_language" style="display:block; margin-top: 10px;">Favorite Programming Language:</label>
             <select name="fav_language" style="width: 100%; padding: 8px;">
-                <option value="1">Python</option>
-                <option value="2">JavaScript</option>
-                <option value="3">Java</option>
-                <option value="4">C++</option>
-                <option value="5">Go</option>
+                {% for language in languages %}
+                <option value="{{language.id}}">{{language.name}}</option>
+                {%endfor %}
             </select>
 
             <label for="about" style="display:block; margin-top: 10px;">About You:</label>
@@ -41,11 +39,9 @@
                 
             <label style="display:block; margin-top: 10px;">Select Your Topics of Interest:</label>
             <div style="padding-left: 10px;">
-                <label><input type="checkbox" name="interest_in_topics" value="1"> Web Development</label><br>
-                <label><input type="checkbox" name="interest_in_topics" value="2"> Machine Learning</label><br>
-                <label><input type="checkbox" name="interest_in_topics" value="3"> Cybersecurity</label><br>
-                <label><input type="checkbox" name="interest_in_topics" value="4"> Blockchain</label><br>
-                <label><input type="checkbox" name="interest_in_topics" value="5"> AI</label><br>
+                {% for topic in topics %}
+                <label><input type="checkbox" name="interest_in_topics" value="{{topic.id}}"> {{topic.name}}</label><br>
+                {%endfor %}
             </div>
 
             <div style="text-align: center; margin-top: 20px;">
